@@ -41,9 +41,19 @@ public class AppTest
      */
     public void testApp()
     {
-        System.out.println("CC");
+        System.out.println(System.getProperty("os.name"));
+        String name=System.getProperty("os.name");
+        if (name.equals("Mac OS X")){
+            System.out.print("thisA");
+            System.setProperty("webdriver.chrome.driver", "/Users/coco/workspace/java/chromedriver");
+        }
 
-        System.setProperty("webdriver.chrome.driver", "D:\\chromedriver_win32\\chromedriver.exe");
+        else{
+            System.out.print("thisB");
+            System.setProperty("webdriver.chrome.driver", "D:\\chromedriver_win32\\chromedriver.exe");
+        }
+
+
         WebDriver driver = new ChromeDriver();
         driver.get("http://www.google.com");
 
@@ -53,6 +63,7 @@ public class AppTest
 
         WebElement eleItem1=driver.findElements(By.name("btnK")).get(0);
         eleItem1.click();
+
       //  assertTrue( true );
     }
 }
