@@ -58,6 +58,7 @@ public class AppTest
         WebDriver driver = new ChromeDriver();
         driver.get("http://www.google.com");
 
+        
         WebDriverWait waiter = new WebDriverWait(driver, 5*1000);
         waiter.until(ExpectedConditions.presenceOfElementLocated(By.id("lst-ib")));
         WebElement eleItem=driver.findElements(By.id("lst-ib")).get(0);
