@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
@@ -58,7 +59,9 @@ public class AppTest
         driver.get("http://www.google.com");
 
         WebDriverWait waiter = new WebDriverWait(driver, 5*1000);
+        waiter.until(ExpectedConditions.presenceOfElementLocated(By.id("lst-ib")));
         WebElement eleItem=driver.findElements(By.id("lst-ib")).get(0);
+
         eleItem.sendKeys("coco");
 
         WebElement eleItem1=driver.findElements(By.name("btnK")).get(0);
