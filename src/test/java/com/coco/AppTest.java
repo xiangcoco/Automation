@@ -12,6 +12,7 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.Keys;
 
 /**
  * Unit test for simple App.
@@ -64,10 +65,12 @@ public class AppTest
         WebElement eleItem=driver.findElements(By.id("lst-ib")).get(0);
 
         eleItem.sendKeys("coco");
-
+        eleItem.sendKeys(Keys.RETURN);
+        /*
+        waiter.until(ExpectedConditions.presenceOfElementLocated(By.name("btnK")));
         WebElement eleItem1=driver.findElements(By.name("btnK")).get(0);
         eleItem1.click();
-
+*/
       //  assertTrue( true );
     }
 }
